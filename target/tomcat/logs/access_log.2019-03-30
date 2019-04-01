@@ -1,0 +1,2 @@
+127.0.0.1 - - [30/Mar/2019:20:27:27 +0800] "POST /clothes/upload HTTP/1.1" 200 7 http-bio-80-exec-1 214
+127.0.0.1 - - [30/Mar/2019:20:27:52 +0800] "POST /clothes/upload HTTP/1.1" 200 7 http-bio-80-exec-2 25
