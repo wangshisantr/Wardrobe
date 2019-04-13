@@ -5,19 +5,23 @@ public class Clothes {
 
     private String title;
 
-    private Integer colorId;
+    private String color;
 
-    private Integer season;
+    private String season;
 
-    private Integer price;
+    private Float price;
 
-    private Integer classificationId;
+    private String classification;
 
-    private Integer tagId;
+    private String tag;
 
     private String image;
 
     private Integer useDegree;
+
+    private String openId;
+
+    private Long userId;
 
     public Long getId() {
         return id;
@@ -35,44 +39,44 @@ public class Clothes {
         this.title = title == null ? null : title.trim();
     }
 
-    public Integer getColorId() {
-        return colorId;
+    public String getColor() {
+        return color;
     }
 
-    public void setColorId(Integer colorId) {
-        this.colorId = colorId;
+    public void setColor(String color) {
+        this.color = color == null ? null : color.trim();
     }
 
-    public Integer getSeason() {
+    public String getSeason() {
         return season;
     }
 
-    public void setSeason(Integer season) {
-        this.season = season;
+    public void setSeason(String season) {
+        this.season = season == null ? null : season.trim();
     }
 
-    public Integer getPrice() {
+    public Float getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Float price) {
         this.price = price;
     }
 
-    public Integer getClassificationId() {
-        return classificationId;
+    public String getClassification() {
+        return classification;
     }
 
-    public void setClassificationId(Integer classificationId) {
-        this.classificationId = classificationId;
+    public void setClassification(String classification) {
+        this.classification = classification == null ? null : classification.trim();
     }
 
-    public Integer getTagId() {
-        return tagId;
+    public String getTag() {
+        return tag;
     }
 
-    public void setTagId(Integer tagId) {
-        this.tagId = tagId;
+    public void setTag(String tag) {
+        this.tag = tag == null ? null : tag.trim();
     }
 
     public String getImage() {
@@ -89,5 +93,21 @@ public class Clothes {
 
     public void setUseDegree(Integer useDegree) {
         this.useDegree = useDegree;
+    }
+
+    public String getOpenId() {
+        return openId;
+    }
+
+    public void setOpenId(String openId) {
+        this.openId = openId == null ? null : openId.trim();
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }

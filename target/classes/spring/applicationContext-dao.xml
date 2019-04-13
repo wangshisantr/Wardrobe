@@ -9,7 +9,7 @@
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 
 	<!-- 配置 读取properties文件 jdbc.properties -->
-	<context:property-placeholder location="classpath:jdbc.properties" />
+	<context:property-placeholder location="classpath:*.properties" />
 
 	<!-- 配置 数据源 -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">

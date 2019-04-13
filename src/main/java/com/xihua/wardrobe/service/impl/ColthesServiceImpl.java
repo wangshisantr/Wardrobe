@@ -17,15 +17,28 @@ public class ColthesServiceImpl implements ClothesService {
 	ClothesMapper clothesMapper;
 
 	@Override
-	public List<Clothes> listClothes() {
-		ClothesExample example  = new ClothesExample();
-		List<Clothes> clothesList = clothesMapper.selectByExample(example);
-		return clothesList;
+	public List<Clothes> queryByOpenId(String openId) {
+		ClothesExample example = new ClothesExample();
+		ClothesExample.Criteria criteria= example.createCriteria();
+		criteria.andOpenIdEqualTo(openId);
+		
+		return clothesMapper.selectByExample(example);
 	}
 
 	@Override
-	public Clothes queryById(Long id) {
-		return clothesMapper.selectByPrimaryKey(id);
+	public boolean insertClothes(Clothes clothes) {
+		clothesMapper.insert(clothes);
+		return true;
+	}
+
+	@Override
+	public boolean deleteClothes(String openId, Long id) {
+		ClothesExample example = new ClothesExample();
+		ClothesExample.Criteria criteria = example.createCriteria();
+		criteria.andOpenIdEqualTo(openId);
+		criteria.andIdEqualTo(id);
+		clothesMapper.deleteByExample(example);
+		return true;
 	}
 	
 	

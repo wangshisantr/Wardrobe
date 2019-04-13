@@ -4,13 +4,15 @@
   <resultMap id="BaseResultMap" type="com.xihua.wardrobe.pojo.Clothes" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="title" property="title" jdbcType="VARCHAR" />
-    <result column="color_id" property="colorId" jdbcType="INTEGER" />
-    <result column="season" property="season" jdbcType="INTEGER" />
-    <result column="price" property="price" jdbcType="INTEGER" />
-    <result column="classification_id" property="classificationId" jdbcType="INTEGER" />
-    <result column="tag_id" property="tagId" jdbcType="INTEGER" />
+    <result column="color" property="color" jdbcType="VARCHAR" />
+    <result column="season" property="season" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="REAL" />
+    <result column="classification" property="classification" jdbcType="VARCHAR" />
+    <result column="tag" property="tag" jdbcType="VARCHAR" />
     <result column="image" property="image" jdbcType="VARCHAR" />
     <result column="use_degree" property="useDegree" jdbcType="INTEGER" />
+    <result column="open_id" property="openId" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -71,7 +73,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, title, color_id, season, price, classification_id, tag_id, image, use_degree
+    id, title, color, season, price, classification, tag, image, use_degree, open_id, 
+    user_id
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.xihua.wardrobe.pojo.ClothesExample" >
     select
@@ -104,14 +107,14 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.xihua.wardrobe.pojo.Clothes" >
-    insert into clothes (id, title, color_id, 
-      season, price, classification_id, 
-      tag_id, image, use_degree
-      )
-    values (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{colorId,jdbcType=INTEGER}, 
-      #{season,jdbcType=INTEGER}, #{price,jdbcType=INTEGER}, #{classificationId,jdbcType=INTEGER}, 
-      #{tagId,jdbcType=INTEGER}, #{image,jdbcType=VARCHAR}, #{useDegree,jdbcType=INTEGER}
-      )
+    insert into clothes (id, title, color, 
+      season, price, classification, 
+      tag, image, use_degree, 
+      open_id, user_id)
+    values (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{color,jdbcType=VARCHAR}, 
+      #{season,jdbcType=VARCHAR}, #{price,jdbcType=REAL}, #{classification,jdbcType=VARCHAR}, 
+      #{tag,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, #{useDegree,jdbcType=INTEGER}, 
+      #{openId,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="com.xihua.wardrobe.pojo.Clothes" >
     insert into clothes
@@ -122,8 +125,8 @@
       <if test="title != null" >
         title,
       </if>
-      <if test="colorId != null" >
-        color_id,
+      <if test="color != null" >
+        color,
       </if>
       <if test="season != null" >
         season,
@@ -131,17 +134,23 @@
       <if test="price != null" >
         price,
       </if>
-      <if test="classificationId != null" >
-        classification_id,
+      <if test="classification != null" >
+        classification,
       </if>
-      <if test="tagId != null" >
-        tag_id,
+      <if test="tag != null" >
+        tag,
       </if>
       <if test="image != null" >
         image,
       </if>
       <if test="useDegree != null" >
         use_degree,
+      </if>
+      <if test="openId != null" >
+        open_id,
+      </if>
+      <if test="userId != null" >
+        user_id,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -151,26 +160,32 @@
       <if test="title != null" >
         #{title,jdbcType=VARCHAR},
       </if>
-      <if test="colorId != null" >
-        #{colorId,jdbcType=INTEGER},
+      <if test="color != null" >
+        #{color,jdbcType=VARCHAR},
       </if>
       <if test="season != null" >
-        #{season,jdbcType=INTEGER},
+        #{season,jdbcType=VARCHAR},
       </if>
       <if test="price != null" >
-        #{price,jdbcType=INTEGER},
+        #{price,jdbcType=REAL},
       </if>
-      <if test="classificationId != null" >
-        #{classificationId,jdbcType=INTEGER},
+      <if test="classification != null" >
+        #{classification,jdbcType=VARCHAR},
       </if>
-      <if test="tagId != null" >
-        #{tagId,jdbcType=INTEGER},
+      <if test="tag != null" >
+        #{tag,jdbcType=VARCHAR},
       </if>
       <if test="image != null" >
         #{image,jdbcType=VARCHAR},
       </if>
       <if test="useDegree != null" >
         #{useDegree,jdbcType=INTEGER},
+      </if>
+      <if test="openId != null" >
+        #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>
@@ -189,26 +204,32 @@
       <if test="record.title != null" >
         title = #{record.title,jdbcType=VARCHAR},
       </if>
-      <if test="record.colorId != null" >
-        color_id = #{record.colorId,jdbcType=INTEGER},
+      <if test="record.color != null" >
+        color = #{record.color,jdbcType=VARCHAR},
       </if>
       <if test="record.season != null" >
-        season = #{record.season,jdbcType=INTEGER},
+        season = #{record.season,jdbcType=VARCHAR},
       </if>
       <if test="record.price != null" >
-        price = #{record.price,jdbcType=INTEGER},
+        price = #{record.price,jdbcType=REAL},
       </if>
-      <if test="record.classificationId != null" >
-        classification_id = #{record.classificationId,jdbcType=INTEGER},
+      <if test="record.classification != null" >
+        classification = #{record.classification,jdbcType=VARCHAR},
       </if>
-      <if test="record.tagId != null" >
-        tag_id = #{record.tagId,jdbcType=INTEGER},
+      <if test="record.tag != null" >
+        tag = #{record.tag,jdbcType=VARCHAR},
       </if>
       <if test="record.image != null" >
         image = #{record.image,jdbcType=VARCHAR},
       </if>
       <if test="record.useDegree != null" >
         use_degree = #{record.useDegree,jdbcType=INTEGER},
+      </if>
+      <if test="record.openId != null" >
+        open_id = #{record.openId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=BIGINT},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -219,13 +240,15 @@
     update clothes
     set id = #{record.id,jdbcType=BIGINT},
       title = #{record.title,jdbcType=VARCHAR},
-      color_id = #{record.colorId,jdbcType=INTEGER},
-      season = #{record.season,jdbcType=INTEGER},
-      price = #{record.price,jdbcType=INTEGER},
-      classification_id = #{record.classificationId,jdbcType=INTEGER},
-      tag_id = #{record.tagId,jdbcType=INTEGER},
+      color = #{record.color,jdbcType=VARCHAR},
+      season = #{record.season,jdbcType=VARCHAR},
+      price = #{record.price,jdbcType=REAL},
+      classification = #{record.classification,jdbcType=VARCHAR},
+      tag = #{record.tag,jdbcType=VARCHAR},
       image = #{record.image,jdbcType=VARCHAR},
-      use_degree = #{record.useDegree,jdbcType=INTEGER}
+      use_degree = #{record.useDegree,jdbcType=INTEGER},
+      open_id = #{record.openId,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=BIGINT}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -236,20 +259,20 @@
       <if test="title != null" >
         title = #{title,jdbcType=VARCHAR},
       </if>
-      <if test="colorId != null" >
-        color_id = #{colorId,jdbcType=INTEGER},
+      <if test="color != null" >
+        color = #{color,jdbcType=VARCHAR},
       </if>
       <if test="season != null" >
-        season = #{season,jdbcType=INTEGER},
+        season = #{season,jdbcType=VARCHAR},
       </if>
       <if test="price != null" >
-        price = #{price,jdbcType=INTEGER},
+        price = #{price,jdbcType=REAL},
       </if>
-      <if test="classificationId != null" >
-        classification_id = #{classificationId,jdbcType=INTEGER},
+      <if test="classification != null" >
+        classification = #{classification,jdbcType=VARCHAR},
       </if>
-      <if test="tagId != null" >
-        tag_id = #{tagId,jdbcType=INTEGER},
+      <if test="tag != null" >
+        tag = #{tag,jdbcType=VARCHAR},
       </if>
       <if test="image != null" >
         image = #{image,jdbcType=VARCHAR},
@@ -257,19 +280,27 @@
       <if test="useDegree != null" >
         use_degree = #{useDegree,jdbcType=INTEGER},
       </if>
+      <if test="openId != null" >
+        open_id = #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.xihua.wardrobe.pojo.Clothes" >
     update clothes
     set title = #{title,jdbcType=VARCHAR},
-      color_id = #{colorId,jdbcType=INTEGER},
-      season = #{season,jdbcType=INTEGER},
-      price = #{price,jdbcType=INTEGER},
-      classification_id = #{classificationId,jdbcType=INTEGER},
-      tag_id = #{tagId,jdbcType=INTEGER},
+      color = #{color,jdbcType=VARCHAR},
+      season = #{season,jdbcType=VARCHAR},
+      price = #{price,jdbcType=REAL},
+      classification = #{classification,jdbcType=VARCHAR},
+      tag = #{tag,jdbcType=VARCHAR},
       image = #{image,jdbcType=VARCHAR},
-      use_degree = #{useDegree,jdbcType=INTEGER}
+      use_degree = #{useDegree,jdbcType=INTEGER},
+      open_id = #{openId,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>
