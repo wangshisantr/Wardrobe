@@ -11,9 +11,11 @@ com\xihua\wardrobe\service\SeasonService.class
 com\xihua\wardrobe\mapper\ClassificationMapper.class
 com\xihua\wardrobe\pojo\Color.class
 com\xihua\wardrobe\pojo\ClassificationClothes.class
+com\xihua\wardrobe\service\CollocationServiceImpl.class
 com\xihua\wardrobe\pojo\TagExample$Criterion.class
 com\xihua\wardrobe\service\ClothesService.class
 com\xihua\wardrobe\service\impl\SeasonServiceImpl.class
+com\xihua\wardrobe\mapper\CollocationMapper.class
 com\xihua\wardrobe\pojo\Clothes.class
 com\xihua\wardrobe\pojo\ColorExample$Criterion.class
 com\xihua\wardrobe\service\impl\UserServiceImpl.class
@@ -31,6 +33,7 @@ com\xihua\wardrobe\pojo\User.class
 com\xihua\wardrobe\controller\testController.class
 com\xihua\wardrobe\mapper\TagMapper.class
 com\xihua\wardrobe\service\ClassificationService.class
+com\xihua\wardrobe\service\CollocationService.class
 com\xihua\wardrobe\pojo\UserExample.class
 com\xihua\wardrobe\service\impl\ClassificationServiceImpl.class
 com\xihua\wardrobe\util\HttpRequest.class
@@ -62,4 +65,5 @@ com\xihua\wardrobe\pojo\ClassificationExample$Criteria.class
 com\xihua\wardrobe\controller\LoginConrtroller.class
 com\xihua\wardrobe\service\impl\ColthesServiceImpl.class
 com\xihua\wardrobe\pojo\ClassificationExample$GeneratedCriteria.class
+com\xihua\wardrobe\controller\CollocationController.class
 com\xihua\wardrobe\pojo\ClassificationExample.class

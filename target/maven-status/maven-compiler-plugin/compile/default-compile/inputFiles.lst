@@ -4,6 +4,7 @@ D:\java\eclipse4.8-workspace\wardrobe\src\main\java\com\xihua\wardrobe\service\C
 D:\java\eclipse4.8-workspace\wardrobe\src\main\java\com\xihua\wardrobe\pojo\Classification.java
 D:\java\eclipse4.8-workspace\wardrobe\src\main\java\com\xihua\wardrobe\pojo\ClassificationExample.java
 D:\java\eclipse4.8-workspace\wardrobe\src\main\java\com\xihua\wardrobe\util\CookieUtils.java
+D:\java\eclipse4.8-workspace\wardrobe\src\main\java\com\xihua\wardrobe\controller\CollocationController.java
 D:\java\eclipse4.8-workspace\wardrobe\src\main\java\com\xihua\wardrobe\controller\ClothesController.java
 D:\java\eclipse4.8-workspace\wardrobe\src\main\java\com\xihua\wardrobe\controller\SeasonController.java
 D:\java\eclipse4.8-workspace\wardrobe\src\main\java\com\xihua\wardrobe\service\impl\SeasonServiceImpl.java
@@ -36,8 +37,11 @@ D:\java\eclipse4.8-workspace\wardrobe\src\main\java\com\xihua\wardrobe\service\S
 D:\java\eclipse4.8-workspace\wardrobe\src\main\java\com\xihua\wardrobe\pojo\ClassificationClothes.java
 D:\java\eclipse4.8-workspace\wardrobe\src\main\java\com\xihua\wardrobe\util\WResult.java
 D:\java\eclipse4.8-workspace\wardrobe\src\main\java\com\xihua\wardrobe\controller\ClassificationController.java
+D:\java\eclipse4.8-workspace\wardrobe\src\main\java\com\xihua\wardrobe\service\CollocationServiceImpl.java
 D:\java\eclipse4.8-workspace\wardrobe\src\main\java\com\xihua\wardrobe\service\impl\ColthesServiceImpl.java
+D:\java\eclipse4.8-workspace\wardrobe\src\main\java\com\xihua\wardrobe\mapper\CollocationMapper.java
 D:\java\eclipse4.8-workspace\wardrobe\src\main\java\com\xihua\wardrobe\pojo\Clothes.java
+D:\java\eclipse4.8-workspace\wardrobe\src\main\java\com\xihua\wardrobe\service\CollocationService.java
 D:\java\eclipse4.8-workspace\wardrobe\src\main\java\com\xihua\wardrobe\pojo\Color.java
 D:\java\eclipse4.8-workspace\wardrobe\src\main\java\com\xihua\wardrobe\pojo\TagExample.java
 D:\java\eclipse4.8-workspace\wardrobe\src\main\java\com\xihua\wardrobe\util\JsonUtils.java

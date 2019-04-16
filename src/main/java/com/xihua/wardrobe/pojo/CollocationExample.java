@@ -403,52 +403,52 @@ public class CollocationExample {
         }
 
         public Criteria andCreatDateEqualTo(Date value) {
-            addCriterion("creat_date =", value, "creatDate");
+            addCriterionForJDBCDate("creat_date =", value, "creatDate");
             return (Criteria) this;
         }
 
         public Criteria andCreatDateNotEqualTo(Date value) {
-            addCriterion("creat_date <>", value, "creatDate");
+            addCriterionForJDBCDate("creat_date <>", value, "creatDate");
             return (Criteria) this;
         }
 
         public Criteria andCreatDateGreaterThan(Date value) {
-            addCriterion("creat_date >", value, "creatDate");
+            addCriterionForJDBCDate("creat_date >", value, "creatDate");
             return (Criteria) this;
         }
 
         public Criteria andCreatDateGreaterThanOrEqualTo(Date value) {
-            addCriterion("creat_date >=", value, "creatDate");
+            addCriterionForJDBCDate("creat_date >=", value, "creatDate");
             return (Criteria) this;
         }
 
         public Criteria andCreatDateLessThan(Date value) {
-            addCriterion("creat_date <", value, "creatDate");
+            addCriterionForJDBCDate("creat_date <", value, "creatDate");
             return (Criteria) this;
         }
 
         public Criteria andCreatDateLessThanOrEqualTo(Date value) {
-            addCriterion("creat_date <=", value, "creatDate");
+            addCriterionForJDBCDate("creat_date <=", value, "creatDate");
             return (Criteria) this;
         }
 
         public Criteria andCreatDateIn(List<Date> values) {
-            addCriterion("creat_date in", values, "creatDate");
+            addCriterionForJDBCDate("creat_date in", values, "creatDate");
             return (Criteria) this;
         }
 
         public Criteria andCreatDateNotIn(List<Date> values) {
-            addCriterion("creat_date not in", values, "creatDate");
+            addCriterionForJDBCDate("creat_date not in", values, "creatDate");
             return (Criteria) this;
         }
 
         public Criteria andCreatDateBetween(Date value1, Date value2) {
-            addCriterion("creat_date between", value1, value2, "creatDate");
+            addCriterionForJDBCDate("creat_date between", value1, value2, "creatDate");
             return (Criteria) this;
         }
 
         public Criteria andCreatDateNotBetween(Date value1, Date value2) {
-            addCriterion("creat_date not between", value1, value2, "creatDate");
+            addCriterionForJDBCDate("creat_date not between", value1, value2, "creatDate");
             return (Criteria) this;
         }
 
