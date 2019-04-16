@@ -10,6 +10,7 @@ com\xihua\wardrobe\pojo\UserExample$Criteria.class
 com\xihua\wardrobe\service\SeasonService.class
 com\xihua\wardrobe\mapper\ClassificationMapper.class
 com\xihua\wardrobe\pojo\Color.class
+com\xihua\wardrobe\pojo\ClassificationClothes.class
 com\xihua\wardrobe\pojo\TagExample$Criterion.class
 com\xihua\wardrobe\service\ClothesService.class
 com\xihua\wardrobe\service\impl\SeasonServiceImpl.class

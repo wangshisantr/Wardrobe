@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.xihua.wardrobe.pojo.Classification;
 import com.xihua.wardrobe.service.ClassificationService;
+import com.xihua.wardrobe.service.ClothesService;
 import com.xihua.wardrobe.util.WResult;
 
 @Controller
@@ -16,6 +17,7 @@ public class ClassificationController {
 
 	@Autowired
 	ClassificationService classificationService;
+	ClothesService clothesService;
 	
 	@ResponseBody
 	@RequestMapping("/classification/listparent")
@@ -30,4 +32,5 @@ public class ClassificationController {
 		List<Classification> list = classificationService.listChildByParentId(parentId);
 		return WResult.build(1, "ok", list);
 	}
+	
 }
