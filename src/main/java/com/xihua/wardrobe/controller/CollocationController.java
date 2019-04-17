@@ -8,6 +8,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.xihua.wardrobe.pojo.Collocation;
@@ -22,8 +24,15 @@ public class CollocationController {
 	CollocationService collocationService;
 
 	@ResponseBody
-	@RequestMapping("insert")
-	public WResult insert(Collocation collocation) {
+	@RequestMapping(value="insert",method= {RequestMethod.POST, RequestMethod.GET})
+	public WResult insert(Collocation collocation, @RequestParam(value="dateString")String dateString, String openId) throws ParseException {
+		// 把字符串转化为日期
+		if (dateString != null && !dateString.equals("")) {
+			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			Date dateResult = simpleDateFormat.parse(dateString);
+			collocation.setDate(dateResult);
+		}
+		collocation.setCreatDate(new Date());
 		collocationService.insert(collocation);
 		return WResult.build(1, "ok");
 	}
