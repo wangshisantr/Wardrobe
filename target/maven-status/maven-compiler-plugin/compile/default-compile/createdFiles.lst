@@ -30,7 +30,6 @@ com\xihua\wardrobe\pojo\ClothesExample$GeneratedCriteria.class
 com\xihua\wardrobe\controller\ColorController.class
 com\xihua\wardrobe\mapper\ClothesMapper.class
 com\xihua\wardrobe\pojo\User.class
-com\xihua\wardrobe\controller\testController.class
 com\xihua\wardrobe\mapper\TagMapper.class
 com\xihua\wardrobe\service\ClassificationService.class
 com\xihua\wardrobe\service\CollocationService.class

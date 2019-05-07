@@ -44,7 +44,7 @@ public class LoginConrtroller {
 		// 拿到openid
 		String opengId = (String) map.get("openId");
 		List<User> userList = userService.listUser(opengId);
-		if (userList != null) {
+		if (userList != null && !userList.isEmpty()) {
 			return WResult.build(1, "该用户已经注册",opengId);
 		}
 		// 封装user
@@ -55,6 +55,6 @@ public class LoginConrtroller {
 		user.setUsername((String) map.get("nickName"));
 
 		userService.insertUser(user);
-		return WResult.build(1, "注册成功");
+		return WResult.build(1, "注册成功", opengId);
 	}
 }

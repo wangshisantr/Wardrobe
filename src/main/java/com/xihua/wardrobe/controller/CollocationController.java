@@ -24,8 +24,9 @@ public class CollocationController {
 	CollocationService collocationService;
 
 	@ResponseBody
-	@RequestMapping(value="insert",method= {RequestMethod.POST, RequestMethod.GET})
-	public WResult insert(Collocation collocation, @RequestParam(value="dateString")String dateString, String openId) throws ParseException {
+	@RequestMapping(value = "insert", method = { RequestMethod.POST, RequestMethod.GET })
+	public WResult insert(Collocation collocation, @RequestParam(value = "dateString") String dateString, String openId)
+			throws ParseException {
 		// 把字符串转化为日期
 		if (dateString != null && !dateString.equals("")) {
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -44,7 +45,10 @@ public class CollocationController {
 		for (Collocation collocation : list) {
 			// 把创建搭配的日期和穿的日期转化为字符串
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-			String dressDateSting = simpleDateFormat.format(collocation.getDate());
+			String dressDateSting = "";
+			if (collocation.getDate() != null) {
+				dressDateSting = simpleDateFormat.format(collocation.getDate());
+			}
 			String createDate = simpleDateFormat.format(collocation.getCreatDate());
 			collocation.setDressDateString(dressDateSting);
 			collocation.setCreatDateString(createDate);
