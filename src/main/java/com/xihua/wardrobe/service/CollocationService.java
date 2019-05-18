@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.xihua.wardrobe.pojo.Collocation;
+import com.xihua.wardrobe.pojo.RankingVO;
 
 public interface CollocationService {
 
@@ -27,4 +28,8 @@ public interface CollocationService {
 	boolean deleteById(Long id);
 	
 	boolean insert(Collocation collocation);
+	
+    List<RankingVO> listRanking ();
+    
+    boolean updateByGivelike (Long id); 
 }

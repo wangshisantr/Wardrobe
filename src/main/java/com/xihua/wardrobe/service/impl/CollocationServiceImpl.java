@@ -1,4 +1,4 @@
-package com.xihua.wardrobe.service;
+package com.xihua.wardrobe.service.impl;
 
 import java.util.Date;
 import java.util.List;
@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import com.xihua.wardrobe.mapper.CollocationMapper;
 import com.xihua.wardrobe.pojo.Collocation;
 import com.xihua.wardrobe.pojo.CollocationExample;
+import com.xihua.wardrobe.pojo.RankingVO;
+import com.xihua.wardrobe.service.CollocationService;
 
 @Service
 public class CollocationServiceImpl implements CollocationService {
@@ -48,6 +50,17 @@ public class CollocationServiceImpl implements CollocationService {
 	@Override
 	public boolean insert(Collocation collocation) {
 		collocationMapper.insert(collocation);
+		return true;
+	}
+
+	@Override
+	public List<RankingVO> listRanking() {
+		return collocationMapper.listRanking();
+	}
+
+	@Override
+	public boolean updateByGivelike(Long id) {
+		collocationMapper.updateByGivelike(id);
 		return true;
 	}
 

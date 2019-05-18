@@ -13,6 +13,7 @@
     <result column="use_degree" property="useDegree" jdbcType="INTEGER" />
     <result column="open_id" property="openId" jdbcType="VARCHAR" />
     <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="dress_level" property="dressLevel" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -110,11 +111,11 @@
     insert into clothes (id, title, color, 
       season, price, classification, 
       tag, image, use_degree, 
-      open_id, user_id)
+      open_id, user_id,dress_level)
     values (#{id,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{color,jdbcType=VARCHAR}, 
       #{season,jdbcType=VARCHAR}, #{price,jdbcType=REAL}, #{classification,jdbcType=VARCHAR}, 
       #{tag,jdbcType=VARCHAR}, #{image,jdbcType=VARCHAR}, #{useDegree,jdbcType=INTEGER}, 
-      #{openId,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT})
+      #{openId,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT},#{dressLevel,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.xihua.wardrobe.pojo.Clothes" >
     insert into clothes
@@ -303,4 +304,7 @@
       user_id = #{userId,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
+  <select id = "adviceBySeasonAndLevel" parameterType= "com.xihua.wardrobe.pojo.Clothes" resultType="com.xihua.wardrobe.pojo.Clothes">
+  	SELECT image,id,title FROM `clothes` WHERE season = #{season} and dress_level=#{dressLevel}
+  </select>
 </mapper>

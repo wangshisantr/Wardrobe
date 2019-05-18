@@ -22,8 +22,19 @@ public class Clothes {
     private String openId;
 
     private Long userId;
+    
+    private int dressLevel;
+    
 
-    public Long getId() {
+    public int getDressLevel() {
+		return dressLevel;
+	}
+
+	public void setDressLevel(int dressLevel) {
+		this.dressLevel = dressLevel;
+	}
+
+	public Long getId() {
         return id;
     }
 

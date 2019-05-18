@@ -2,6 +2,8 @@ package com.xihua.wardrobe.mapper;
 
 import com.xihua.wardrobe.pojo.Collocation;
 import com.xihua.wardrobe.pojo.CollocationExample;
+import com.xihua.wardrobe.pojo.RankingVO;
+
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -27,4 +29,8 @@ public interface CollocationMapper {
     int updateByPrimaryKeySelective(Collocation record);
 
     int updateByPrimaryKey(Collocation record);
+    
+    List<RankingVO> listRanking ();
+    
+    boolean updateByGivelike (Long id); 
 }

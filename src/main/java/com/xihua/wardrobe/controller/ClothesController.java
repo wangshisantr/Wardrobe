@@ -24,6 +24,7 @@ import com.xihua.wardrobe.service.ClassificationService;
 import com.xihua.wardrobe.service.ClothesService;
 import com.xihua.wardrobe.service.ColorService;
 import com.xihua.wardrobe.service.SeasonService;
+import com.xihua.wardrobe.util.ClotheslUtil;
 import com.xihua.wardrobe.util.WResult;
 
 @Controller
@@ -260,5 +261,17 @@ public class ClothesController {
 			return "error";
 		}
 	}
-
+	@ResponseBody
+	@RequestMapping("adviceBySeasonAndLevel")
+    public WResult  adviceBySeasonAndLevel(int temp) {
+	
+		int level = ClotheslUtil.selectByLevel(temp);
+		String season = ClotheslUtil.getSeason();
+		Clothes clothes = new Clothes ();
+		clothes.setDressLevel(level);
+		clothes.setSeason(season);
+		List<Clothes> ad = clothesService.adviceBySeasonAndLevel(clothes);
+		return WResult.build(1, "ok", ad);
+	}
+	
 }

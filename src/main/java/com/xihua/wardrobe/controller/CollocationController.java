@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.xihua.wardrobe.pojo.Collocation;
+import com.xihua.wardrobe.pojo.RankingVO;
 import com.xihua.wardrobe.service.CollocationService;
 import com.xihua.wardrobe.util.WResult;
 
@@ -27,6 +28,8 @@ public class CollocationController {
 	@RequestMapping(value = "insert", method = { RequestMethod.POST, RequestMethod.GET })
 	public WResult insert(Collocation collocation, @RequestParam(value = "dateString") String dateString, String openId)
 			throws ParseException {
+		collocation.setStatus(1);
+		collocation.setLikeCount((long) 0);
 		// 把字符串转化为日期
 		if (dateString != null && !dateString.equals("")) {
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -90,6 +93,20 @@ public class CollocationController {
 	@RequestMapping("deleteById")
 	public WResult deleteById(Long id) {
 		collocationService.deleteById(id);
+		return WResult.build(1, "ok");
+	}
+	
+	@ResponseBody
+	@RequestMapping("listRanking")
+	public WResult listRanking() {
+		List<RankingVO> listCollocation = collocationService.listRanking();
+		return WResult.build(1, "ok", listCollocation);
+	}
+	
+	@ResponseBody
+	@RequestMapping("updateByGiveLike")
+	public WResult updateByGiveLike(Long id) {
+		collocationService.updateByGivelike(id);
 		return WResult.build(1, "ok");
 	}
 }

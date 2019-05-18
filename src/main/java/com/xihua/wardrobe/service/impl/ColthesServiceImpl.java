@@ -123,6 +123,13 @@ public class ColthesServiceImpl implements ClothesService {
 		criteria.andColorEqualTo(colorName);
 		return clothesMapper.selectByExample(example);
 	}
+
+	@Override
+	public List<Clothes> adviceBySeasonAndLevel(Clothes clothes) {
+		
+		return clothesMapper.adviceBySeasonAndLevel(clothes);
+	}
+	
 	
 	
 }

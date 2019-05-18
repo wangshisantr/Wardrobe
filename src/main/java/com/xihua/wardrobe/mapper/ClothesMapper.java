@@ -27,4 +27,7 @@ public interface ClothesMapper {
     int updateByPrimaryKeySelective(Clothes record);
 
     int updateByPrimaryKey(Clothes record);
+    
+    //参数与xml里sql语句里的 参数命名一致parameterType
+    List<Clothes> adviceBySeasonAndLevel(Clothes clothes);
 }

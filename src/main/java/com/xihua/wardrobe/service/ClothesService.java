@@ -81,4 +81,11 @@ public interface ClothesService {
 	 * @return
 	 */
 	int queryNumnerBySeason(String Color, String openId);
+	
+	/**
+	 * 根据穿衣等级和 季节查询单品
+	 * @param clothes
+	 * @return
+	 */
+    List<Clothes> adviceBySeasonAndLevel(Clothes clothes);
 }

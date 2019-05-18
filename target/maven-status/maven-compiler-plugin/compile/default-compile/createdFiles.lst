@@ -1,4 +1,6 @@
 com\xihua\wardrobe\pojo\SeasonExample$GeneratedCriteria.class
+com\xihua\wardrobe\controller\ClothingGuideController.class
+com\xihua\wardrobe\service\ClothingGuideService.class
 com\xihua\wardrobe\pojo\ClothesExample$Criterion.class
 com\xihua\wardrobe\mapper\ColorMapper.class
 com\xihua\wardrobe\pojo\CollocationExample$Criteria.class
@@ -6,17 +8,19 @@ com\xihua\wardrobe\pojo\CollocationExample$Criterion.class
 com\xihua\wardrobe\controller\ClothesController.class
 com\xihua\wardrobe\pojo\Collocation.class
 com\xihua\wardrobe\pojo\CollocationExample.class
+com\xihua\wardrobe\util\ClotheslUtil.class
 com\xihua\wardrobe\pojo\UserExample$Criteria.class
 com\xihua\wardrobe\service\SeasonService.class
 com\xihua\wardrobe\mapper\ClassificationMapper.class
 com\xihua\wardrobe\pojo\Color.class
 com\xihua\wardrobe\pojo\ClassificationClothes.class
-com\xihua\wardrobe\service\CollocationServiceImpl.class
+com\xihua\wardrobe\pojo\ClothingGuide.class
 com\xihua\wardrobe\pojo\TagExample$Criterion.class
 com\xihua\wardrobe\service\ClothesService.class
 com\xihua\wardrobe\service\impl\SeasonServiceImpl.class
 com\xihua\wardrobe\mapper\CollocationMapper.class
 com\xihua\wardrobe\pojo\Clothes.class
+com\xihua\wardrobe\service\impl\CollocationServiceImpl.class
 com\xihua\wardrobe\pojo\ColorExample$Criterion.class
 com\xihua\wardrobe\service\impl\UserServiceImpl.class
 com\xihua\wardrobe\pojo\CollocationExample$GeneratedCriteria.class
@@ -31,6 +35,7 @@ com\xihua\wardrobe\controller\ColorController.class
 com\xihua\wardrobe\mapper\ClothesMapper.class
 com\xihua\wardrobe\pojo\User.class
 com\xihua\wardrobe\mapper\TagMapper.class
+com\xihua\wardrobe\pojo\RankingVO.class
 com\xihua\wardrobe\service\ClassificationService.class
 com\xihua\wardrobe\service\CollocationService.class
 com\xihua\wardrobe\pojo\UserExample.class
@@ -44,9 +49,11 @@ com\xihua\wardrobe\mapper\SeasonMapper.class
 com\xihua\wardrobe\pojo\ColorExample.class
 com\xihua\wardrobe\pojo\SeasonExample$Criteria.class
 com\xihua\wardrobe\pojo\TagExample$Criteria.class
+com\xihua\wardrobe\service\impl\ClothingGuideServiceImpl.class
 com\xihua\wardrobe\controller\ClassificationController.class
 com\xihua\wardrobe\mapper\UserMapper.class
 com\xihua\wardrobe\pojo\SeasonExample.class
+com\xihua\wardrobe\mapper\ClothingGuideMapper.class
 com\xihua\wardrobe\service\UserService.class
 com\xihua\wardrobe\util\JsonUtils.class
 com\xihua\wardrobe\pojo\SeasonExample$Criterion.class
